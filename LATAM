@@ -183,8 +183,6 @@ password required pam_permit.so' >/etc/pam.d/common-password && chmod +x /etc/pa
   clear && clear
   apt update
   apt upgrade -y
-  wget -O /usr/bin/LATAM https://raw.githubusercontent.com/drowkid01/LATAM_Oficial/main/Instalador/LATAM &>/dev/null
-  chmod +x /usr/bin/LATAM
 }
 
 dependencias() {
@@ -341,7 +339,7 @@ check_key() {
   msgi -bar2
   echo -ne "\033[1;96m          >>> INTRODUZCA LA KEY ABAJO <<<\n\033[1;31m        " && read respuesta
   # Verificar la respuesta del servidor Apache
-  if [ "$respuesta" = "clave" ]; then
+  if [ "${respuesta}" = "${clave}" ]; then
     instalador_final && chmod 777 ../etc/SCRIPT-LATAM/menu.sh && rm -rf LATAM colores && clear && clear && bash
   else
     error_fun && rm -rf LATAM colores && clear && clear && bash
