@@ -344,16 +344,11 @@ check_key() {
   elif [[ "${respuesta}" == "" ]]; then
     error_fun && rm -rf LATAM colores && clear && clear && bash
   else
-
+    error_fun
   fi
-rm -rf LATAM colores && clear && clear && bash
+  rm -rf LATAM colores && clear && clear && bash
 }
 check_key
-case $1 in
--d | --drowkid)
-echo "xd"
-;;
-esac
 
-rm -rf LATAM colores && clear && clear && bash
+
 
