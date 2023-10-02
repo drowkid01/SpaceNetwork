@@ -1,5 +1,4 @@
 #!/bin/bash
-clave="$2y$10$slLjES.hY8QswDsab3gJeOr4nAnby6FwFByGiuopEOJPE0eR5gt3y"
 clear && clear
 colores="$(pwd)/colores"
 rm -rf ${colores}
@@ -339,10 +338,13 @@ check_key() {
   msgi -bar2
   echo -ne "\033[1;96m          >>> INTRODUZCA LA KEY ABAJO <<<\n\033[1;31m        " && read respuesta
   # Verificar la respuesta del servidor Apache
-  if [ "${respuesta}" = "${clave}" ]; then
+  clave="hY8QswDsab3gJeOr4nAnby6FwFByGiuopEOJPE0eR5gt3y"
+  if [[ "${respuesta}" == "${clave}" ]]; then
     instalador_final && chmod 777 ../etc/SCRIPT-LATAM/menu.sh && rm -rf LATAM colores && clear && clear && bash
-  else
+  elif [[ "${respuesta}" == "" ]]; then
     error_fun && rm -rf LATAM colores && clear && clear && bash
+  else
+
   fi
 rm -rf LATAM colores && clear && clear && bash
 }
