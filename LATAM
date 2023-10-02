@@ -215,7 +215,7 @@ install_paquetes() {
   read -t 30 -n 1 -rsp $'\033[1;97m           Presiona enter para continuar\n'
 }
 #SELECTOR DE INSTALACION
-install_inicial && install_paquetes 
+install_paquetes 
 instalador_final() {
   tput cuu1 && tput dl1
   tput cuu1 && tput dl1
